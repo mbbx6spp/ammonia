@@ -1,11 +1,58 @@
 h1. ammonia
 
-Provides Nitrogen applications an easier more consistent Rails-like environment to develop in...explain more later.
+h2. Overview
+
+Provides Nitrogen applications an easier more consistent Rails-like environment 
+to develop in...explain more later.
+
+h2. Background
+
+Smell anything? It might be a bad code smell in your Nitrogen application. 
+Are you writing too much setup code for each and every Nitrogen web app you 
+write? The answer _might_ be to use Ammonia to provide set conventions for 
+organizing your Nitrogen web app code.
+
+Whether you love it, hate it or are somewhere in between, Rails does one thing 
+very, very well: provide a way to organize your web application consistently
+so you can switch between Rails applications and be fairly sure where to find 
+certain types of code.
+
+h2. Tell me more...
+
+As a former Rails, Merb and even TurboGears developer in a previous pre-Erlang 
+life, I found one thing very refreshing about these frameworks and that was 
+that they offered a consistent project structure for each new application. I 
+knew exactly where to find global application settings, environment specific 
+settings, application initializers, plugin dependency definitions, views, 
+controller logic,  persistence mapping code, etc.
+
+For example, in Rails the following files & dirs contain code for specific 
+purposes:
+* #{RAILS_ROOT}/config - root directory for all configuration code
+* #{RAILS_ROOT}/config/initializers - initializer code
+* #{RAILS_ROOT}/config/environments - environment specific code
+* #{RAILS_ROOT}/config/routes.rb - defines routes for web application
+
+Creating a consistent project layout (that eventually could be customized), 
+which also fits into the Erlang/OTP and Rebar conventions will be the goal of 
+the Ammonia project.
+
+h2. Timeline
+
+Expect a few updates in the next 2 weeks of February 2011, but also note that 
+I am up against some big deadlines at work until May 2011.
 
 h2. Author(s)
 
 * Susan Potter <me@susanpotter.net>
+* Want to help me? Email me now!:)
 
 h2. Copyright
 
 Copyright (c) 2011 Susan Potter <me@susanpotter.net>.  All rights reserved.
+
+h2. License
+
+The source code is released as an open source project under the BSD license. 
+Details of the license can be found in LICENSE of this source code 
+distribution.
