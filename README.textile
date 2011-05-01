@@ -1,4 +1,4 @@
-h1. ammonia
+h1. Ammonia
 
 h2. Overview
 
@@ -36,6 +36,74 @@ purposes:
 Creating a consistent project layout (that eventually could be customized), 
 which also fits into the Erlang/OTP and Rebar conventions will be the goal of 
 the Ammonia project.
+
+h2. What is wrong with Nitrogen?
+
+When you want to get a small quick interactive web application up and running 
+Nitrogen is a great tool for the job without needing to modify it too much.
+
+Over the last 6-9 months I have been using Nitrogen on a work research web app 
+to enable role playing exercises that record user behaviors to interactions for
+data analysis and refine the exercise further in future deployed experiments.
+
+During this time I have found a number of areas in nitrogen (now nitrogen_core)
+that I have had to modify in my own fork to produce the markup I really wanted.
+
+One big sore point is forms in HTML5. Nitrogen doesn't really render them the 
+way you might expect. If you were to code up your own HTML5 form you might 
+write it like so:
+
+bc. <form method="POST" action="/path/to/endpoint">
+    <fieldset>
+      <legend>User Information</legend>
+      <input type="text" name="username" placeholder="Your Desired Username" autofocus required>
+      <input type="password" name="password" placeholder="Your Password" required>
+      <input type="password" name="password_confirmation" placeholder="Your Password" required>
+      <input type="date" name="birthDate" placeholder="Your Date of Birth" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="url" name="blogUrl" placeholder="Your Blog URL">
+      <input type="submit" value="Create">
+    </fieldset>
+  </form>
+
+The current Nitrogen elements do not produce this markup. The form markup 
+rendered doesn't usually add the name attributes or even wrap the form in a 
+<form> element. Instead id attributes are used to extract form data upon 
+AJAX requests sent. The form is completely unusable if there is a Javascript 
+error or if Javascript cannot be executed on the device the form is being 
+rendered on.
+
+Why does this matter to most developers? It probably doesn't if all you need 
+is something that works on modern desktop browsers with Javascript turned on.
+However, it starts to matter a lot when you want to have your sites work *well*
+on mobile phones, tablets and other devices that can take advantage of the new 
+HTML5 form elements. Even older desktop environments where you cannot always 
+expect Javascript to be turned on. Plus wouldn't you want to take advantage of 
+better usability provided by these element attributes in newer browsers (for 
+free) to enhance your user's experience?
+
+Semantic markup is also an issue. Now many developers may just want something 
+that works and they do not care if they violate HTML(5) standards or not. That 
+is fine and you probably will not care about this issue, but for those of us 
+that not only want to render semantic markup but also take advantage of less
+commonly used (yet oft very useful) attributes on common tags, like @rel@ on 
+links, then this will be a sore spot.
+
+h2. Why even base Ammonia on Nitrogen?
+
+Having made all these criticisms I would now like to praise Nitrogen for the 
+programming model is promotes, which is different to many other web frameworks
+and I think works very nicely for interactive web applications.
+
+h2. Why not "fix" Nitrogen instead of create Ammonia?
+
+I am not opposed to Rusty incorporating whatever changes from Ammonia into 
+Nitrogen he desires, but I did want Ammonia to be a proving ground. Also I 
+suspect from previous nitrogen-web mailing list threads that my concerns 
+stated above are not the problems Rusty is trying to solve with Nitrogen and 
+he is probably uninterested in incorporating many of the features Ammonia will 
+contain.
 
 h2. Timeline
 
