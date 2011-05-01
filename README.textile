@@ -28,10 +28,10 @@ controller logic,  persistence mapping code, etc.
 
 For example, in Rails the following files & dirs contain code for specific 
 purposes:
-* #{RAILS_ROOT}/config - root directory for all configuration code
-* #{RAILS_ROOT}/config/initializers - initializer code
-* #{RAILS_ROOT}/config/environments - environment specific code
-* #{RAILS_ROOT}/config/routes.rb - defines routes for web application
+* @#{RAILS_ROOT}/config - root directory for all configuration code@
+* @#{RAILS_ROOT}/config/initializers - initializer code@
+* @#{RAILS_ROOT}/config/environments - environment specific code@
+* @#{RAILS_ROOT}/config/routes.rb - defines routes for web application@
 
 Creating a consistent project layout (that eventually could be customized), 
 which also fits into the Erlang/OTP and Rebar conventions will be the goal of 
@@ -54,22 +54,39 @@ way you might expect. If you were to code up your own HTML5 form you might
 write it like so:
 
 bc. <form method="POST" action="/path/to/endpoint">
-    <fieldset>
+    <fieldset id="userinfo">
       <legend>User Information</legend>
-      <input type="text" name="username" placeholder="Your Desired Username" autofocus required>
-      <input type="password" name="password" placeholder="Your Password" required>
-      <input type="password" name="password_confirmation" placeholder="Your Password" required>
-      <input type="date" name="birthDate" placeholder="Your Date of Birth" required>
-      <input type="email" name="email" placeholder="Your Email Address" required>
-      <input type="text" name="name" placeholder="Your Name">
-      <input type="url" name="blogUrl" placeholder="Your Blog URL">
-      <input type="submit" value="Create">
+      <input  type="text" 
+              name="username" 
+              placeholder="Your Desired Username" autofocus required>
+      <input  type="password" 
+              name="password" 
+              placeholder="Your Password" required>
+      <input  type="password" 
+              name="password_confirmation" 
+              placeholder="Your Password" required>
     </fieldset>
+    <fieldset id="personalinfo">
+      <legend>Personal Information</legend>
+      <input  type="date" 
+              name="birthDate" 
+              placeholder="Your Date of Birth" required>
+      <input  type="email" 
+              name="email" 
+              placeholder="Your Email Address" required>
+      <input  type="text" 
+              name="name" 
+              placeholder="Your Name">
+      <input  type="url" 
+              name="blogUrl" 
+              placeholder="Your Blog URL">
+    </fieldset>
+    <input type="submit" value="Create">
   </form>
 
 The current Nitrogen elements do not produce this markup. The form markup 
 rendered doesn't usually add the name attributes or even wrap the form in a 
-<form> element. Instead id attributes are used to extract form data upon 
+<form> element. Instead @id@ attributes are used to extract form data upon 
 AJAX requests sent. The form is completely unusable if there is a Javascript 
 error or if Javascript cannot be executed on the device the form is being 
 rendered on.
