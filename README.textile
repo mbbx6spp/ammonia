@@ -130,12 +130,13 @@ I am up against some big deadlines at work until May 2011.
 Future timeline (as of May 2011):
 
 * Coming in June 2011:
-** basic OTP application templates for Nitrogen apps
-** basic configuration file structure for Nitrogen apps
-** basic support for HTML5 form elements to produce semantic markup
+** Basic OTP application templates for Nitrogen apps
+** Basic configuration file structure for Nitrogen apps
+** Basic support for HTML5 form elements to produce semantic markup
 
 * Coming in July/August 2011:
 ** More enhanced HTML5 element support
+** Add environment configuration conventions
 
 h2. Author(s)
 
