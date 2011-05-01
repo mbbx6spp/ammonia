@@ -107,8 +107,18 @@ contain.
 
 h2. Timeline
 
-Expect a few updates in the next 2 weeks of February 2011, but also note that 
+Original prediction: Expect a few updates in the next 2 weeks of February 2011, but also note that 
 I am up against some big deadlines at work until May 2011.
+
+Future timeline (as of May 2011):
+
+* Coming in June 2011:
+** basic OTP application templates for Nitrogen apps
+** basic configuration file structure for Nitrogen apps
+** basic support for HTML5 form elements to produce semantic markup
+
+* Coming in July/August 2011:
+** More enhanced HTML5 element support
 
 h2. Author(s)
 
